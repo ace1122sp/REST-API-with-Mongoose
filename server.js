@@ -19,8 +19,8 @@ mongoose.connect('mongodb://localhost:27017/edx-course-assignment4')
 //middlewares
 app.use(bodyParser.json());
 app.use(logger('dev'));
-
 app.use(router);
+app.use(errorhandler());
 
 //mount server
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}...`));

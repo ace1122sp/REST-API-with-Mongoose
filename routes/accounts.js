@@ -5,7 +5,10 @@ const Account = require('../models');
 module.exports = {
   getAccounts(req, res) {
     Account.find({}, (err, results) => {
-      if(err) return console.error(err);
+      if(err) {
+        console.error(err);
+        return res.sendStatus(500);
+      }
       console.log(results);
       res.status(200);
       res.send(results);
@@ -48,21 +51,11 @@ module.exports = {
   },
   deleteAccount(req, res) {
     const id = req.params.id;
-    if(!id) return res.sendStatus(400);
     Account.remove({_id: id}, err => {
       if(err) {
         console.error(err);
         res.sendStatus(400);
       } else {
-        Account.findById(id, (err, res) => {
-          if(err) {
-            console.log('error');
-          } else if(res) {
-            console.log('not deleted');
-          } else {
-            console.log('deleted');
-          }
-        })
         res.status(200);
         res.send(`Account id: ${id} successfully deleted.`);
       }
