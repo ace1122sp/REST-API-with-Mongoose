@@ -22,7 +22,7 @@ module.exports = {
     account.save((err, acc) => {
       if(err) {
         console.error(err);
-        return res.sendStatus(400);
+        return res.sendStatus(500);
       }
       res.status(201);
       res.send(acc.toJSON());
@@ -39,7 +39,7 @@ module.exports = {
         acc.update({balance}, (err, result) => {
           if(err) {
             console.error(err);
-            res.sendStatus(400);
+            res.sendStatus(500);
           } else {
             console.log(result);
             res.status(200);
