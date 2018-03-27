@@ -14,7 +14,7 @@ open another terminal and go to your MongoDB directory
 mongod
 ```
 
-### Now, you are ready to test the project. In one terminal, go to your project root folder and then:
+### Now, you are ready to test the project. In a terminal, go to your project root folder and then:
 ```
 node server.js 
 ```
