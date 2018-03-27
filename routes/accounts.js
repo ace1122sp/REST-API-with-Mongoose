@@ -16,7 +16,7 @@ module.exports = {
   },
   createAccount(req, res) {
     if(!req.body.name) return res.sendStatus(400);
-    const name = req.body.name.trim().toString();
+    const name = req.body.name.toString();
     const balance = parseInt(req.body.balance) || 0;
     const account = new Account({ name, balance });
     account.save((err, acc) => {
