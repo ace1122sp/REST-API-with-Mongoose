@@ -1,6 +1,6 @@
 {
   "name": "REST-API-with-Mongoose",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "REST API with mongoose and express",
   "main": "server.js",
   "scripts": {
